@@ -1,5 +1,5 @@
 const express = require('express');
-const users = require('./users.json');
+let users = require('./users.json');
 const bodyParser = require('body-parser');
 const app = express();
 const fs = require('fs');
