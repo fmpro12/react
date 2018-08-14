@@ -30,7 +30,7 @@ var webpack = require('webpack');
         ]
     },
     devtool: "source-map",
-    mode: "development",	
+    mode: "production",	
 
     devServer: {
         contentBase: path.join(__dirname, 'dist'),

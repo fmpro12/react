@@ -1,60 +1,37 @@
-const express = require('express');
-const posts = require('./posts.json');
-const bodyParser = require('body-parser');
-const app = express();
-const fs = require('fs');
-const router = express.Router();
+const router = require('express').Router();
+let collection = require('./collection');
+const{ ObjectID } = require('mongodb');
 
-function getPost(id) {
-	return posts.find(post => post.id == id);
-}
 
-function saveJson(posts) {
-	fs.writeFileSync(__dirname + '/.posts.json', JSON.stringify(posts));
-}
 
 router.get('/', (req, res) => {
-	res.send(posts);
+	collection
+	.getAllPosts()
+	.then(data => res.send(data));
 });
 
 router.post('/', (req, res) => {
-	const post = getpost(req.body.id);
-
-	if(!post) {
-		posts.push(req.body);
-		res.send(req.body);
-		saveJson(posts);
-	} else {
-		res
-			.status(400)
-			.send(`post with ID ${req.body.id} already exists`);
-	}
+	collection
+	.insertPost(req.body)
+	.then(post => res.send(post));
 });
 
 router.get('/:postId', (req, res) => {
-	const post = getpost(req.params.postId);
-	if(post) {
-		res.send(post);
-	} else {
-		res
-			.status(404)
-			.send("post not found!");
-	}
+	collection
+	.getPost(req.params.postId)
+	.then(data => res.send(data));
 });
 
 router.put('/:postId', (req, res) => {
-	posts = posts.filter(post => post.id != req.params.postId);
-	posts.push(req.body);
-
-	res.send(req.body);
-	saveJson(posts);
+	collection
+	.updatePost(req.params.postId, req.body)
+	.then(data => res.send(date));
 });
 
 router.delete('/:postId', (req, res) => {
-	posts = posts.filter(post => post.id != req.params.postId);
-
-	res.send("OK");
-	saveJson(posts);
+	collection
+	.deletePost(req.params.postId)
+	.then(data => res.send(data));
 });
 
 module.exports = router;

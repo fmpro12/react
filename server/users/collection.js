@@ -22,7 +22,29 @@ function getUser(id) {
 		});
 }
 
+function updateUser(userId, params) {
+	return getUsersCollection()
+	.then(collection => collection
+		.updateOne(
+			{_id: ObjectID(userId) },
+			{ $set: params}
+		));
+}
+
+function insertUser(user){
+	return getUsersCollection()
+	.then(collection => collection.insertOne(user));
+}
+
+function deleteUser(userId){
+	return getUsersCollection
+	.then(collection => collection.deleteOne({ _id: ObjectID(id) }))
+};
+
 module.exports = {
 	getAllUsers,
-	getUser
+	getUser,
+	insertUser,
+	deleteUser,
+	updateUser
 };

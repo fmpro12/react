@@ -1,60 +1,39 @@
 const express = require('express');
-let users = require('./users.json');
-const bodyParser = require('body-parser');
+let collection = require('./collection');
 const app = express();
-const fs = require('fs');
+const db = require('../db');
 const router = express.Router();
 
-function getUser(id) {
-	return users.find(user => user.id == id);
-}
 
-function saveJson(users) {
-	fs.writeFileSync(__dirname + '/.users.json', JSON.stringify(users));
-}
 
 router.get('/', (req, res) => {
-	res.send(users);
+	collection
+	.getAllUsers()
+	.then(data => res.send(data));
 });
 
 router.post('/', (req, res) => {
-	const user = getUser(req.body.id);
-
-	if(!user) {
-		users.push(req.body);
-		res.send(req.body);
-		saveJson(users);
-	} else {
-		res
-			.status(400)
-			.send(`User with ID ${req.body.id} already exists`);
-	}
+	collection
+	.insertUser(req.body)
+	.then(user => res.send(user));
 });
 
 router.get('/:userId', (req, res) => {
-	const user = getUser(req.params.userId);
-	if(user) {
-		res.send(user);
-	} else {
-		res
-			.status(404)
-			.send("User not found!");
-	}
+	collection
+	.getUser(req.params.userId)
+	.then(data => res.send(data));
 });
 
 router.put('/:userId', (req, res) => {
-	users = users.filter(user => user.id != req.params.userId);
-	users.push(req.body);
-
-	res.send(req.body);
-	saveJson(users);
+	collection
+	.updateUser(req.params.userId, req.body)
+	.then(data => res.send(date));
 });
 
 router.delete('/:userId', (req, res) => {
-	users = users.filter(user => user.id != req.params.userId);
-
-	res.send("OK");
-	saveJson(users);
+	collection
+	.deleteUser(req.params.userId)
+	.then(data => res.send(data));
 });
 
 module.exports = router;
