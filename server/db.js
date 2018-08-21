@@ -1,11 +1,10 @@
-const { MongoClient } = require('mongodb');
+const mongoose = require('mongoose');
 
-module.exports = () => {
-	return new Promise(resolve => {
-		MongoClient.connect('mongodb://localhost:27017', (err, client) => {
-			const db = client.db('twitter');
-			resolve(db);
-		});
-	});
-};
+mongoose.connect('mongodb://localhost:27017/mongoose');
+
+module.exports = mongoose;
+
+
+
+
 

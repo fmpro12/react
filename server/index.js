@@ -1,8 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const users = require('./users/server.js');
-const posts = require('./posts/posts.js')
+const posts = require('./posts/posts.js');
 const server = express();
+
+
 
 server.use(bodyParser.json());
 

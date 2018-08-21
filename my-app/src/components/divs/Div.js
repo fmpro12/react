@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Div.css';
 
+
 class Div extends Component {
     render() {
     return (
@@ -9,7 +10,7 @@ class Div extends Component {
     <div className="left_down"></div>
     <div className="main"></div>
     <div className="right_up"></div>
-    <div className="right_down"></div>
+    <div className="right_down"></div>   
     </div>     
     )};
   }
