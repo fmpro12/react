@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import './Div.css';
+import Leftup from './leftup';
+import Leftdown from './leftdown';
+import Main from './main';
+import Rightdown from './rightdown';
+import Rightup from './rightup';
 
 
 class Div extends Component {
     render() {
     return (
     <div className="flex_box">
-    <div className="left_up"></div>
-    <div className="left_down"></div>
-    <div className="main"></div>
-    <div className="right_up"></div>
-    <div className="right_down"></div>   
+  <Leftup />
+  <Leftdown />
+  <Main />
+  <Rightup />
+  <Rightdown />
     </div>     
     )};
   }
