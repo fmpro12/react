@@ -29,6 +29,7 @@
     width: 88%;    
     height: 38px;
     display: flex;  
+    flex-direction: column;    
 }
 
 .search:focus{ 
@@ -40,7 +41,8 @@
     display: flex;     
 }
 .post {
+    display: block;    
     background-color: red;
-    width: inherit;
+    width: 590px;
     height: 80px;
 }
