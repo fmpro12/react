@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './leftup.css'
+import './profile.css'
 
-class Leftup extends Component {
+class Profile extends Component {
     render() {
     return (
-    <div className="leftup">
+    <div className="profile">
     <div className="blue">    
     </div>
     <div className="white">
@@ -16,4 +16,4 @@ class Leftup extends Component {
     )};
   }
   
-  export default Leftup;
+  export default Profile;

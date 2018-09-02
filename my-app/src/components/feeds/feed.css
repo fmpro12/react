@@ -9,11 +9,11 @@
     align-items: center;
     justify-content: center;     
 }
-.search_div:focus {
+.search_div:focus-within  {
     margin-top: 50%;  
     width: 100%;
     margin: 0;
-    height: 132px;
+    height: 142px;
     background-color: #E8F5FD;
     position: static;
     display: flex;
@@ -37,6 +37,10 @@
     border-radius: 8px;    
     width: 88%;    
     height: 80px;
-    display: flex; 
-    
+    display: flex;     
+}
+.post {
+    background-color: red;
+    width: inherit;
+    height: 80px;
 }

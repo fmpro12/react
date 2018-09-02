@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './leftdown.css'
+import './trend.css'
 
-class Leftdown extends Component {
+class Trend extends Component {
     render() {
     return (
-    <div className="leftdown">
+    <div className="trend">
     <span className="trends">Trends for you
     <ul className="trends_items">
 <li>German
@@ -40,4 +40,4 @@ class Leftdown extends Component {
     )};
   }
   
-  export default Leftdown;
+  export default Trend;

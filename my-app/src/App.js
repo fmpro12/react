@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
 import './App.css';
+import Profile from './components/profile/profile';
+import Trend from './components/trends/trend';
+import Feed from './components/feeds/feed';
+import Copyrights from './components/copyrights/copyrights';
+import Follows from './components/follow/follow';
 import Header from './components/header/header';
-import Div from './components/divs/Div'
+
 
 class App extends Component {
-  render() {
+    render() {
     return (
-      <div>
-<Header />
-<Div />
-</div>
-    );
-  }
-}
-
-export default App;
+      <header>
+  <Header />
+    <div className="flex_box">
+  <Profile />
+  <Trend />
+  <Feed />
+  <Follows />
+  <Copyrights />
+    </div>   
+    </header>  
+    )}
+  };
+  
+  export default App;

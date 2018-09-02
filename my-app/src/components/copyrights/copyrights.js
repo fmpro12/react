@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import "./rightdown.css"
+import "./copyrights.css"
 
 
-class Rightdown extends Component {
+class Copyrights extends Component {
     render() {
     return (
-    <div className="rightdown">
+    <div className="copyrights">
     <ul className="links">
     <li class="Footer_item">© 2018 Twitter</li>
     <li class="Footer_item"><a class="Footer_link" href="link" rel="noopener">About</a></li>
@@ -28,4 +28,4 @@ class Rightdown extends Component {
     )};
   }
   
-  export default Rightdown;
+  export default Copyrights;
