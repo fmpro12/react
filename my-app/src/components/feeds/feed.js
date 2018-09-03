@@ -3,12 +3,13 @@ import './feed.css'
 
 
 
-class NewComponent extends React.Component {
+
+class NewComponent extends React.Component{ 
   render() {
     return (
-      <div className="post" {...this.props}>
-        new component
-      </div>
+      <article className="post" {...this.props}>
+        {this.props.user}
+      </article>
     );
   }  
 }
@@ -42,12 +43,12 @@ class Feed extends React.Component {
   
   render() {
     return (
-      <div className="feed">
+      <div className="feed">      
       <div className="search_div" tabindex="0">
-      <input type="text" className="search" placeholder="What's happening?"></input>
+      <input type="text" className="search" placeholder="What's happening?"></input>      
         <Button onClick={this.handleClick} />
-        {this.state.clicked ? <NewComponent /> : null}
-        </div>
+          </div>
+          {this.state.clicked ? <NewComponent /> : null}
       </div>
     );
   }
