@@ -8,7 +8,7 @@ class NewComponent extends React.Component{
   render() {
     return (
       <article className="post" {...this.props}>
-        {this.props.user}
+        {this.props.author}
       </article>
     );
   }  
@@ -25,10 +25,11 @@ class Button extends React.Component {
 }
 
 class Feed extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     
     this.state = {
+      author:props.author,
       clicked: false
     };
     
@@ -48,7 +49,7 @@ class Feed extends React.Component {
       <input type="text" className="search" placeholder="What's happening?"></input>      
         <Button onClick={this.handleClick} />
           </div>
-          {this.state.clicked ? <NewComponent /> : null}
+          {this.state.clicked ? <NewComponent author={ this.state.author }/> : null}
       </div>
     );
   }

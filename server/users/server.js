@@ -9,10 +9,11 @@ router.get('/', (req, res) => {
 	.then(data => res.send(data));
  });
 
-router.post('/', (req, res) => {
-	const user = new User(req.body);
-	user.save();
-	res.send(user.toJSON());
+ router.post('/', (req, res) => {
+	const post = new User(req.body);
+	post.save()
+	.then(data => res.send(data))
+	.catch(e => res.status(400).send(e.message));
 });
 
  router.get('/:userId', (req, res) => {	 

@@ -14,6 +14,9 @@ class Header extends Component {
     <i class="far fa-envelope">
     <span>Messages</span>
     </i>
+    <label class="visuallyhidden" for="search-query">Search query>
+    <input class="search-input" type="text" id="search-query" placeholder="Search Twitter"></input>
+    </label>
     </div>     
     )};
   }
