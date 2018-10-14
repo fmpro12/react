@@ -6,6 +6,7 @@ class Trend extends Component {
     return (
     <div className="trend">
     <span className="trends">Trends for you
+    <button type="button" className="refresh"><small>Change</small></button>
     <ul className="trends_items">
 <li>German
   <div className="stats">66.2K Tweets</div>

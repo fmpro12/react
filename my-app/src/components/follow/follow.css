@@ -2,9 +2,58 @@
     width: inherit; 
     height: inherit;
     display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
 }
 
+.follow_button {
+    color: #1c94e0;
+    background-color: white;
+}
+
+.EdgeButton1{
+    border-radius: 100px;
+    box-shadow: none;
+    cursor: pointer;
+    font-size: 8px;
+    line-height: 16px;
+    padding: 2px 18px;
+    position: relative;
+    white-space: nowrap;
+    background-color:white;
+    border-color: #1DA1F2;
+    vertical-align: middle;
+    display: table-cell;
+}
 
 h3 {
     text-align: left;
+    margin-left: 8px;
 }
+
+.followers_redux {
+    word-break: break-all;
+    color: #14171a;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    padding-right: 50%;
+}
+
+.followers_flex {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    border-bottom: 1px solid #e6ecf0;
+    padding-bottom: 8px;
+}
+.icons_followers {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+} 

@@ -1,60 +1,69 @@
-import React from 'react';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import clickOn from '../redux_store/actions/actions'
+import Posts from '../posts/post'
 import './feed.css'
 
+class Messages extends Component {
 
+    constructor(props) {
+        super(props)
+        this.state = { value: '' }
+        this.handleChange = this.handleChange.bind(this)
+    }
+    handleChange = (event) => {
+        this.setState({ value: event.target.value })
+    }
+    handleSubmit = () => {
+        this.props.mountPost(this.state.value)
+    }
+    newelement() {
+        const { message, clicked } = this.props
+        console.log('clicked', clicked);
+        if (clicked === true) {
+            return (
+                <div>
+                    <div className="post">{message}</div >
+                </div>
+            )
+        }
+    }
 
-
-class NewComponent extends React.Component{ 
-  render() {
-    return (
-      <article className="post" {...this.props}>
-        {this.props.author}
-      </article>
-    );
-  }  
+    render() {
+        const { clickOn } = this.props
+        return <div className="feed">
+            <div className="search_div" tabIndex="0">
+                <input
+                    className="search"
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                    placeholder="What's happening?"
+                />
+                <button className="EdgeButton"
+                    onClick={() => clickOn(this.state.value)} >
+                  <span>Tweet</span>
+                </button>
+            </div>
+            <div className='message'>
+                {this.newelement()}
+            </div>
+            <Posts />
+        </div>
+    }
 }
 
-class Button extends React.Component {
-  render() {
-    return (
-      <button {...this.props}>
-        click
-      </button>
-    );
-  }  
+const mapStateToProps = (state) => {
+    return {
+        message: state.messages.messages_data,
+        clicked: state.messages.clicked
+    }
 }
 
-class Feed extends React.Component {
-  constructor(props) {
-    super(props);
-    
-    this.state = {
-      author:props.author,
-      clicked: false
-    };
-    
-    this.handleClick = this.handleClick.bind(this);
-  }
-  
-  handleClick() {
-    this.setState({
-      clicked: true
-    });
-  }
-  
-  render() {
-    return (
-      <div className="feed">      
-      <div className="search_div" tabindex="0">
-      <input type="text" className="search" placeholder="What's happening?"></input>      
-        <Button onClick={this.handleClick} />
-          </div>
-          {this.state.clicked ? <NewComponent author={ this.state.author }/> : null}
-      </div>
-    );
-  }
-};
+const mapDispatchToProps = (dispatch) => {
+    return {
+        clickOn: bindActionCreators(clickOn, dispatch)
+    }
+}
 
-export default Feed;
-
-
+export default connect(mapStateToProps, mapDispatchToProps)(Messages);
