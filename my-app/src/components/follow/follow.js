@@ -12,6 +12,16 @@ class Follows extends Component {
     <button type="button" className="refresh"><small>View All</small></button>
     </h3>
     <FollowersRedux />
+    <br />
+    <div className="google">
+    <span className="service u-sizeFit">
+    <span class="icon service-gmail"></span>
+    </span>
+    <strong className="strong">Find people you know</strong>
+    <span className="span_google">Import your contacts from Gmail</span>
+    </div>
+    <br />
+    <button type="button" class="refresh">Connect other address books</button>
     </div>
     </div> 
     )};

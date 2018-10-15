@@ -12,6 +12,7 @@ class FollowersRedux extends Component {
             console.log(unit)
             return (
                 <div className="followers_flex">
+                <br />
                  <img src={unit.img} className="icons_followers" alt="" />
                     <article
                      className="followers_redux"

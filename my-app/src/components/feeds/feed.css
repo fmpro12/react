@@ -30,6 +30,7 @@
     height: 38px;
     display: flex;  
     flex-direction: column;    
+    margin-left: 15px;
 }
 
 .search:focus{ 
@@ -39,6 +40,7 @@
     width: 88%;    
     height: 80px;
     display: flex;
+    margin-bottom: 35px;
 }
 .post {
     display: flex;      

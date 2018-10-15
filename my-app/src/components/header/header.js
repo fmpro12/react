@@ -5,17 +5,17 @@ class Header extends Component {
     render() {
     return (
     <div className="Header">
-    <i class="fab fa-twitter"></i>
-    <i class="fas fa-home">
+    <i className="fab fa-twitter"></i>
+    <i className="fas fa-home">
     <span>Home</span>
     </i>
-    <i class="far fa-bell">
+    <i className="far fa-bell">
     <span>Notifications</span></i>
-    <i class="far fa-envelope">
+    <i className="far fa-envelope">
     <span>Messages</span>
     </i>
-    <label class="visuallyhidden" for="search-query">Search query>
-    <input class="search-input" type="text" id="search-query" placeholder="Search Twitter"></input>
+    <label className="visuallyhidden" for="search-query">Search query>
+    <input className="search-input" type="text" id="search-query" placeholder="Search Twitter"></input>
     </label>
     </div>     
     )};
