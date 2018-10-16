@@ -23,9 +23,7 @@ class Messages extends Component {
         console.log('clicked', clicked);
         if (clicked === true) {
             return (
-                <div>
                     <div className="post">{message}</div >
-                </div>
             )
         }
     }
