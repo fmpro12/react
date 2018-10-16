@@ -6,6 +6,7 @@
     "babel-polyfill": "^6.26.0",
     "cross-fetch": "^2.2.2",
     "mongoose": "^5.2.9",
+    "nodemon": "^1.18.4",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
