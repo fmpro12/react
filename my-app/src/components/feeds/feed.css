@@ -43,11 +43,13 @@
     margin-bottom: 35px;
 }
 .post {
-    display: flex;      
+    display: flex;   
+    flex-wrap: wrap;   
     background-color: white;
     border-bottom: 1px solid #e6ecf0;
     cursor: pointer;
     width: 100%;
+    justify-content: flex-start;
     height: 80px;
     margin-top: 10px;
 }
@@ -78,4 +80,25 @@
     margin-left: 8px;
 }
 
+.post > img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin: 0px;
+}
+.flexbox_post {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 450px;
+}
 
+.newpost {
+    display: flex;
+    margin-left: 50px;
+    margin-top: -40px;
+}
+.author {
+    box-sizing: inherit;
+    margin-right: 10px;
+}

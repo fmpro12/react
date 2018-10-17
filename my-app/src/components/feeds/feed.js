@@ -23,7 +23,15 @@ class Messages extends Component {
             return this.props.message.map((newpost) => {
                 console.log(newpost)
                 return (
-                    <div className="post">{newpost}</div >
+                    <div className="post">
+                    <img className="photo" src="https://pbs.twimg.com/profile_images/1725500761/image_bigger.jpg" alt=""></img>
+                    <span className="author">Yan Khusid </span>
+                    <span className="nickname">@fmpro12 </span>
+                    <br />
+                    <div className="flexbox_post">
+                    <span className="newpost">{newpost}</span>
+                    </div>
+                    </div >
             )
         })
     }
