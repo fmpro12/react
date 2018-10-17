@@ -20,7 +20,7 @@ class Profile extends Component {
           Tweets
           <br /> <span className="number">100</span>
           </span>
-          <span className="tweets1">
+          <span className="tweets">
           Following
           <br /> <span className="number">20206</span>
           </span>

@@ -19,14 +19,15 @@ class Messages extends Component {
         this.props.mountPost(this.state.value)
     }
     newelement() {
-        const { message, clicked } = this.props
-        console.log('clicked', clicked);
-        if (clicked === true) {
-            return (
-                    <div className="post">{message}</div >
+        if (this.props.clicked === true) {
+            return this.props.message.map((newpost) => {
+                console.log(newpost)
+                return (
+                    <div className="post">{newpost}</div >
             )
-        }
+        })
     }
+}
 
     render() {
         const { clickOn } = this.props

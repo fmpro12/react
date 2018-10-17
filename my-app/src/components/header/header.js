@@ -5,6 +5,7 @@ class Header extends Component {
     render() {
     return (
     <div className="Header">
+    <span className="Icon Icon--homeFilled Icon--large u-textUserColor"></span>
     <i className="fab fa-twitter"></i>
     <i className="fas fa-home">
     <span>Home</span>

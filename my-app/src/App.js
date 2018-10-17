@@ -6,6 +6,7 @@ import Copyrights from './components/copyrights/copyrights';
 import Follows from './components/follow/follow';
 import Header from './components/header/header';
 import Messages from './components/feeds/feed'
+import './twitter.css'
 
 
 
