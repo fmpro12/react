@@ -20,7 +20,7 @@ const initialState = [
       "name": "Louis Vuitton",
       "img": "https://pbs.twimg.com/profile_images/744912732714041344/BqEpC2Dx_bigger.jpg",
       "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
-    },
+    }
   ]
   
   export default function followers (state = initialState, action){

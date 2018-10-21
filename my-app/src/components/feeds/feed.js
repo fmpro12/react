@@ -21,7 +21,6 @@ class Messages extends Component {
     newelement() {
         if (this.props.clicked === true) {
             return this.props.message.map((newpost) => {
-                console.log(newpost)
                 return (
                     <div className="post">
                     <img className="photo" src="https://pbs.twimg.com/profile_images/1725500761/image_bigger.jpg" alt=""></img>

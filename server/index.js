@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const users = require('./users/server.js');
 const posts = require('./posts/posts.js');
+const followers = require('./followers/index.js');
 const server = express();
 const path = require('path');
 
@@ -12,6 +13,8 @@ server.use(bodyParser.json());
 
 server.use("/api/users/", users);
 server.use("/api/posts/", posts);
+server.use("/api/followers", followers);
+
 
 server.use(express.static(distFolder))
 

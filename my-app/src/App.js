@@ -7,6 +7,7 @@ import Follows from './components/follow/follow';
 import Header from './components/header/header';
 import Messages from './components/feeds/feed'
 import './twitter.css'
+import ProductList from './components/follow/follows_test'
 
 
 
@@ -20,7 +21,9 @@ class App extends Component {
           <Trend />
           <Messages />
           <Follows />
+          <ProductList />
           <Copyrights />
+         
         </div>
       </header>
     )

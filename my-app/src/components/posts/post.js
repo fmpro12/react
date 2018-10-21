@@ -9,7 +9,6 @@ import './post.css'
 class Posts extends Component {
     showPost() {
         return this.props.posts.map((post) => {
-            console.log(post)
             return (
                 <div>
                     <img src={post.img} className="images" alt="" />
@@ -29,7 +28,7 @@ class Posts extends Component {
 }
 
 function mapStateToProps (state) {
-    console.log(state)
+    // console.log(state)
     return {
         posts: state.posts
     }

@@ -9,7 +9,6 @@ import {connect} from 'react-redux'
 class FollowersRedux extends Component {
     showFollow() {
         return this.props.followers.map((unit) => {
-            console.log(unit)
             return (
                 <div className="followers_flex">
                 <br />
@@ -37,7 +36,6 @@ class FollowersRedux extends Component {
 }
 
 function mapStateToProps (state) {
-    console.log(state)
     return {
         followers: state.followers
     }
