@@ -27,7 +27,7 @@ import {
         return {
           ...state,
           loading: false,
-          items: action.payload
+          items: action.payload.followers
         };
   
       case FETCH_PRODUCTS_FAILURE:
