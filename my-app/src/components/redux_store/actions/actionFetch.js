@@ -3,7 +3,7 @@ export function fetchProducts() {
       dispatch(fetchProductsBegin());
       return fetch("/api/followers")
         .then(handleErrors)
-        .then(res => res.json())
+        .then(res => res.json().then(console.log(res.json)))
         .then(json => {
           dispatch(fetchProductsSuccess(json.followers));
           return json.followers;
