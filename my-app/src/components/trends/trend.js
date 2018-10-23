@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './trend.css'
+import './trend.scss'
 
 class Trend extends Component {
     render() {

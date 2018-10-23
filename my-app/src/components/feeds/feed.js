@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import clickOn from '../redux_store/actions/actions'
 import Posts from '../posts/post'
-import './feed.css'
+import './feed'
 
 class Messages extends Component {
 
