@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './follow';
+import './follow.scss';
 import ProductList from './follows_test'
 
 class Follows extends Component {
