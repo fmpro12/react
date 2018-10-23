@@ -7,10 +7,11 @@ class ProductList extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchProducts());
   }
-fetchFunction () {
-    // debugger
+  fetchFunction () {
+    if (this.props.followersFetch === undefined){
+      return <div>Followers Undefined...</div>;
+    }
     return this.props.followersFetch.map((unit) => {
-        console.log(unit)
         return (
             <div className="followers_flex">
             <br />
