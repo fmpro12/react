@@ -2,10 +2,12 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchProducts } from "../redux_store/actions/actionFetch";
+var request = "/api/followers"
+
 
 class ProductList extends React.Component {
   componentDidMount() {
-    this.props.dispatch(fetchProducts());
+    this.props.dispatch(fetchProducts(request));
   }
   fetchFunction () {
     if (this.props.followersFetch === undefined){
