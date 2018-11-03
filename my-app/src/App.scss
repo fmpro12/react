@@ -45,3 +45,7 @@
   height: 154px;
   margin-right: 12%;
 }
+
+body.dialogShowing { /* ...or body.dialogShowing */
+  overflow: hidden;
+}

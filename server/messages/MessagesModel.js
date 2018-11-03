@@ -4,7 +4,8 @@ const messagesSchema = new mongoose.Schema ({
     body: String,
     name: String,
     email: String,
-    postId: Number
+    postId: Number, 
+    id: Number
 });
 
 const Message = mongoose.model('Messages', messagesSchema);
