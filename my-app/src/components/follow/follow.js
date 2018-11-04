@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './follow.css';
-import FollowersRedux from './followers_redux'
+import './follow.scss';
+import ProductList from './follows_test'
 
 class Follows extends Component {
     render() {
@@ -11,7 +11,7 @@ class Follows extends Component {
     <button type="button" className="refresh"><small>Refresh</small></button>
     <button type="button" className="refresh"><small>View All</small></button>
     </h3>
-    <FollowersRedux />
+    <ProductList />
     <br />
     <div className="google">
     <span className="service u-sizeFit">

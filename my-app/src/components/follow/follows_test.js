@@ -3,6 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchProducts } from "../redux_store/actions/actionFetch";
 
+
 class ProductList extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchProducts());

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./copyrights.css"
+import "./copyrights.scss"
 
 
 class Copyrights extends Component {

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // import {Post_reducer, createPost} from '../reducers/post_reducer'
 // import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import './post.css'
+import './post.scss'
 
 
 
@@ -10,10 +10,10 @@ class Posts extends Component {
     showPost() {
         return this.props.posts.map((post) => {
             return (
-                <div>
-                    <img src={post.img} className="images" alt="" />
-                    <br />
+                <div className='feed_main'>
                     <article key={post.id}>{post.title}</article>
+                    <br />
+                    <img src={post.img} className="images" alt="" />
                 </div>
             )
         })

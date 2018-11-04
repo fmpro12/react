@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
-import './header.css';
+import './header.scss';
+import { NavLink } from 'react-router-dom'
+ 
 
 class Header extends Component {
     render() {
     return (
     <div className="Header">
     <span className="Icon Icon--homeFilled Icon--large u-textUserColor"></span>
-    <i className="fab fa-twitter"></i>
-    <i className="fas fa-home">
-    <span>Home</span>
-    </i>
-    <i className="far fa-bell">
-    <span>Notifications</span></i>
-    <i className="far fa-envelope">
-    <span>Messages</span>
-    </i>
+    <NavLink to="/">Home</NavLink>
+    <span>Notifications</span>
+    <NavLink to="/messages" activeClassName="active_click">Messages</NavLink>
     <label className="visuallyhidden" for="search-query">Search query>
     <input className="search-input" type="text" id="search-query" placeholder="Search Twitter"></input>
     </label>
