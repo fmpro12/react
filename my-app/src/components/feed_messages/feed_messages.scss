@@ -11,15 +11,28 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-
+    
 
 .feedmessages {
-    background-color: aqua;
-    position: fixed;
-    width: 720px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    z-index: 6000;
+        position: relative;
+        background-color:white;
+        position: relative;
+        width: 720px;
+        margin-top: 40px;
+        height: 500px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        z-index: 6000;
+    
+    }
+    .js-ariaTitle{
+        flex: 1 1 auto;
+        color: #14171a;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 24px;
+        padding: 10px 15px;
+        border-bottom: 1px solid #e6ecf0;
     }
 }

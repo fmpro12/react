@@ -29,6 +29,7 @@
   flex-direction: column;
   width: 590px;
   height: 10000px;
+  margin-right:400px;
 }
 .follows {
   display: flex;
@@ -36,14 +37,15 @@
   margin-bottom: 13px;
   height: 388px;
   width: 290px;
-  margin-right: 12%;
-
+  right: 9%;
+  position: absolute;
 }
 .copyrights {
   display: flex;
   background-color:white;
   width: 290px;
   height: 154px;
-  margin-right: 12%;
+  right: 9%;
+  top: 460px;
+  position: absolute;
 }
-

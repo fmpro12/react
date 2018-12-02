@@ -43,7 +43,11 @@ class Feedmessages extends Component {
         <div className="modal-overlay">
         <div ref={this.setWrapperRef}>{this.props.children}
         <div className="feedmessages">
-        <span>Test</span>
+        <div className="header">
+          <h2 class="js-ariaTitle">
+            Direct Messages
+          </h2>
+        </div>
         </div>
         </div>
         </div>
