@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no tst specified\" && exit 1",
-    "postinstall": "cd my-app && npm i && npm run build",
+    "postinstall": "cd my-app/ && npm i && npm run build",
     "start": "nodemon server/index.js"
   },
   "repository": {
@@ -46,6 +46,7 @@
     "jest": "^23.6.0",
     "mongoose": "^5.2.9",
     "mongoose-paginate": "^5.0.3",
+    "node-sass": "^4.9.4",
     "nodemon": "^1.18.4",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
