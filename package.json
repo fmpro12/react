@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no tst specified\" && exit 1",
-    "start": "concurrently \"cd server && nodemon index.js\" \"cd my-app/ && npm start"
+    "postinstall": "cd my-app && npm i && npm run build",
+    "start": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
