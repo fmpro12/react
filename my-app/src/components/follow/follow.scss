@@ -1,0 +1,97 @@
+.test{
+    width: inherit; 
+    height: inherit;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+}
+
+.follow_button {
+    color: #1c94e0;
+    background-color: white;
+}
+
+.EdgeButton1{
+    border-radius: 100px;
+    box-shadow: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 2px 18px;
+    position: relative;
+    white-space: nowrap;
+    background-color:white;
+    border-color: #1DA1F2;
+    margin-top: 6px;
+}
+
+h3 {
+    text-align: left;
+    margin-left: 8px;
+}
+
+.followers_redux {
+    word-break: break-all;
+    color: #14171a;
+    font-size: 14px;
+    font-weight: bold;
+    flex-wrap: wrap;
+    position: relative;
+    display: flex;
+    padding-right: 30%;
+    margin-left: 55px;
+}
+
+.followers_flex {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    border-bottom: 1px solid #e6ecf0;
+    padding-bottom: 8px;
+}
+.icons_followers {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 4px;
+} 
+
+.strong {
+    position: relative;
+   margin-left: 8px;
+}
+
+.span_google {
+    color: #657786;
+    display: block;
+    font-size: 12px;
+    margin-left: 45px;
+    margin-bottom: 10px;
+}
+
+.icon {
+    display: inline-block;
+    vertical-align: text-top;
+    background-image: url(https://abs.twimg.com/a/1539134078/img/t1/web_sprite.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+}
+
+.u-sizeFit {
+    padding: 4px 6px;
+    border: 1px solid #e6ecf0;
+    border-radius: 3px;
+    background: #fff;
+    color: #14171a;
+    font-weight: bold;
+    font-size: 12px;  
+    padding-bottom: 12px; 
+}
+
+.google {
+    border-bottom: 1px solid #e6ecf0;
+}

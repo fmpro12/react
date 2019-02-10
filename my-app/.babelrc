@@ -1,0 +1,21 @@
+{
+  "presets": [
+      "@babel/preset-react",
+      "@babel/preset-env"
+  ],
+ 
+  "plugins": [
+    "transform-react-constant-elements",
+    "@babel/transform-react-inline-elements",
+    "@babel/plugin-proposal-class-properties",
+    "transform-react-remove-prop-types",
+    "transform-react-pure-class-to-function",
+
+    "@babel/transform-runtime",
+    ["babel-plugin-root-import", {
+      "rootPathSuffix": "."
+    }]
+  ]
+}
+
+

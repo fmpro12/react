@@ -1,0 +1,35 @@
+.links {
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+box-sizing: inherit;
+padding: 15px;
+margin: 0;
+justify-content:space-between;
+align-items: flex-end;
+height: 4px;
+margin-top: 25px;
+}
+
+.Footer_item {    
+    padding-right: 1px;    
+    color: #657786;
+    float: left;
+    font-size: 12px;
+    font-family: "Segoe UI",Arial,sans-serif;    
+    display: flex;    
+    list-style: none;
+    font-weight: 500;
+    box-sizing: initial;    
+    margin: 0;     
+    block-size: 18px;   
+}
+
+a {
+    display: flex;
+    text-decoration: none;
+    cursor: pointer;      
+    color: #657786;    
+    margin: 0;   
+}
+
