@@ -3,7 +3,7 @@ const initialState = [
     "userId": 1,
     "id": 1,
     "test": "this is test",
-    "title": "We’d like to thank @timer150 who was instrumental in getting this release out, as well as @a_cederstrom, @bugzpodder, @iansu, and many others who contributed to it and tested it. You’re the best! 💜",
+    "title": "We’d like to thank @timer10 who was instrumental in getting this release out, as well as @a_cederstrom, @bugzpodder, @iansu, and many others who contributed to it and tested it. You’re the best! 💜",
     "img": "https://pbs.twimg.com/media/Dod0IOIXsAAenBH.jpg",
     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
   },

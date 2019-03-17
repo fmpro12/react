@@ -1,7 +1,7 @@
-export function fetchProducts() {
-    return dispatch => {
-      dispatch(fetchProductsBegin());
-      return fetch("/api/followers")
+export function fetchProducts(id) {
+  return dispatch => {
+    dispatch(fetchProductsBegin(id));
+    return fetch(`/api/${id}`)
         .then(handleErrors)
         .then(res => res.json().then(console.log(res)))
         .then(json => {

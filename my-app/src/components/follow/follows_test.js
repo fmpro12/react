@@ -3,11 +3,13 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchProducts } from "../redux_store/actions/actionFetch";
 
+const id = "followers"
+
 
 class ProductList extends React.Component {
   
   componentDidMount() {
-    this.props.dispatch(fetchProducts());
+    this.props.dispatch(fetchProducts(id));
   }
 fetchFunction () {
     if (this.props.followersFetch === undefined){

@@ -12,9 +12,3 @@ export default clickOn
 
 
 
-// const mountPost = (post_data) => {
-//     return {
-//         type: MOUNT_POST,
-//         payload: post_data
-//     }
-// }

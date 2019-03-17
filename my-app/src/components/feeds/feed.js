@@ -45,6 +45,8 @@ class Messages extends Component {
                     value={this.state.value}
                     onChange={this.handleChange}
                     placeholder="What's happening?"
+                    type="text"
+                    ref="feed"
                 />
                 <button className="EdgeButton"
                     onClick={() => clickOn(this.state.value)} >
