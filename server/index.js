@@ -14,9 +14,19 @@ const distFolder = path.join(__dirname, '../my-app/build')
 server.use(bodyParser.json());
 server.use("/api/users/", users);
 server.use("/api/posts/", posts);
-server.use("/api/followers", followers);
+
+server.use("/api/followers", followers, function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+}
+);
+
 server.use("/api/messages", messages);
-server.use("/api/tweets", tweets)
+server.use("/api/tweets", tweets, function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+}
+)
 
 
 server.use(express.static(distFolder))

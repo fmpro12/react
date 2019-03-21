@@ -1,0 +1,58 @@
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 4000;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.modal-overlay .feedmessages {
+  position: relative;
+  background-color: white;
+  position: relative;
+  width: 720px;
+  margin-top: 40px;
+  height: 500px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  z-index: 6000;
+}
+
+.modal-overlay .js-ariaTitle {
+  flex: 1 1 auto;
+  color: #14171a;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+  padding: 10px 15px;
+  border-bottom: 1px solid #e6ecf0;
+}
+
+.retweet-text {
+  color: #657786;
+  font-size: 12px;
+  line-height: 16.5px;
+  margin-left: 8px;
+}
+
+.avatar {
+  float: left;
+  margin-top: 3px;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  border: 0px;
+}
+
+.pretty-link {
+  font-weight: bold;
+  color: #14171a;
+}

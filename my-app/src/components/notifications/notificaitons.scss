@@ -36,3 +36,23 @@
         border-bottom: 1px solid #e6ecf0;
     }
 }
+
+.retweet-text {
+    color: rgb(101, 119, 134);
+    font-size: 12px;
+    line-height: 16.5px;
+    margin-left: 8px;
+}
+
+.avatar{
+    float: left;
+    margin-top: 3px;    
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    border: 0px;
+}
+.pretty-link{
+    font-weight: bold;
+    color: rgb(20, 23, 26);
+}

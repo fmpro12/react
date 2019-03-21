@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import clickOn from '../redux_store/actions/actions'
-import Posts from '../posts/post'
+// import Posts from '../posts/post'
+import Notifications from '../notifications/notificaitons'
 import './feed.scss'
 
 class Messages extends Component {
@@ -56,7 +57,7 @@ class Messages extends Component {
             <div className='message'>
                 {this.newelement()}
             </div>
-            <Posts />
+            <Notifications />
         </div>
     }
 }
