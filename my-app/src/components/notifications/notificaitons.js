@@ -27,23 +27,15 @@ class Notifications extends Component {
     )   
     .then(result => this.setState({
         hits: result.data,
-        isLoading: false, 
-        images: result.data.filter(image => image.entities.media !==undefined).map(image => image.entities.media[0].media_url)
+        isLoading: false       
     }))
     .catch(e => console.log(e));
   }
 
   
   render() {    
-    const { hits, isLoading, images } = this.state; 
-
-    const image = images.map((unit) =>
-      <img src={unit} alt="" className="images"></img>      
-    )
-
-
-console.log(image)
-
+    const { hits, isLoading} = this.state; 
+ 
     if (isLoading) {
       return (
         <div className='feed_main'>       
@@ -54,15 +46,15 @@ console.log(image)
       )
     }
     else {
-      return hits.map((data) =>        
+      return hits.filter(item => item.entities.media !==undefined).map((item) =>        
         <div className='feed_main'>
-          <strong className="fullname">{data.user.name}</strong>
+          <strong className="fullname">{item.user.name}</strong>
           <article
-            key={data.id}
-          >{data.full_text}
+            key={item.id}
+          >{item.full_text}
           </article>
-          <br />     
-         {hits}                       
+          <br />
+          <img src={item.entities.media[0].media_url} alt="" className="images" />      
         </div>
       )
     }
