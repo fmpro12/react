@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 var Twitter = require('twitter');
-var params = {screen_name: 'adidas'};
+var params = {screen_name: 'adidas', tweet_mode: 'extended'};
 
 router.get('/', (req, res) => {
   client.get('statuses/user_timeline', params, function(error, tweets, response) {    

@@ -10,6 +10,7 @@ class Notifications extends Component {
 
     this.state = {
       hits: [],
+      images: [],
       isLoading: false,
       error: null,
     };
@@ -26,39 +27,46 @@ class Notifications extends Component {
     )   
     .then(result => this.setState({
         hits: result.data,
-        isLoading: false
+        isLoading: false, 
+        images: result.data.filter(image => image.entities.media !==undefined).map(image => image.entities.media[0].media_url)
     }))
     .catch(e => console.log(e));
   }
+
   
-  render() {
-    const size = 1;
-    const { hits, isLoading } = this.state;
+  render() {    
+    const { hits, isLoading, images } = this.state; 
+
+    const image = images.map((unit) =>
+      <img src={unit} alt="" className="images"></img>      
+    )
+
+
+console.log(image)
+
     if (isLoading) {
       return (
         <div className='feed_main'>       
-              <h2 className="js-ariaTitle">
-                Loading...
-              </h2>
-            </div>
+          <h2 className="js-ariaTitle">
+            Loading...
+          </h2>
+        </div>
       )
     }
-  else {
-    return hits.slice(0, size).map(( data) => {
-        return(
-              <div className='feed_main'>
-              <strong className="fullname">{data.user.name} </strong>
-              <article
-                key={data.id}
-                >{data.text}
-                </article>
-              <br />
-              <img src={data.entities.media[0].media_url} className="images" alt="" />
-            </div>
-            )
-          })
-      }
+    else {
+      return hits.map((data) =>        
+        <div className='feed_main'>
+          <strong className="fullname">{data.user.name}</strong>
+          <article
+            key={data.id}
+          >{data.full_text}
+          </article>
+          <br />     
+         {hits}                       
+        </div>
+      )
     }
-  }    
+  }
+}    
 
 export default Notifications;
