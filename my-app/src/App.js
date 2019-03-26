@@ -12,7 +12,7 @@ import Feedmessages from './components/feed_messages/feed_messages'
 import { BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 import './components/feed_messages/feed_messages.scss'
 import Notifications from './components/notifications/notificaitons'
-
+import Search from './components/search/search'
 
 
 class ModalSwitch extends React.Component {
@@ -83,6 +83,7 @@ const ITEMS = [
 function Header () {
   return (
     <div className="header1">
+    
     <div className="modal_message">  
     <Link to="/">
        <p className="links2">Home</p>
@@ -98,8 +99,8 @@ function Header () {
           <p className="links2">{i.title}</p>          
         </Link>
       ))}
-
-      </div>     
+      </div>  
+      <Search />   
       </div>      
   );
 }

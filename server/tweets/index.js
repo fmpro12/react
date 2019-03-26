@@ -6,7 +6,7 @@ var params = {screen_name: 'adidas', tweet_mode: 'extended'};
 router.get('/', (req, res) => {
   client.get('statuses/user_timeline', params, function(error, tweets, response) {    
     if (!error) {     
-      res.send(tweets);          
+      res.send(tweets);   
     } 
     else {
       res.status(500).json({ error: error });

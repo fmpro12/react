@@ -16,17 +16,20 @@ server.use("/api/users/", users);
 server.use("/api/posts/", posts);
 
 server.use("/api/followers", followers, function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 }
 );
 
 server.use("/api/messages", messages);
+
 server.use("/api/tweets", tweets, function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  console.log(res)
   next();
-}
-)
+});
 
 
 server.use(express.static(distFolder))
