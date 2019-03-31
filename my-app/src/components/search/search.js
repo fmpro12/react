@@ -45,8 +45,7 @@ getInfo = () => {
           placeholder="Search for..."
           ref={input => this.search = input}
           onChange={this.handleInputChange}
-          />
-          {/* <Results results={this.state.results} /> */}
+          />       
         </form>
     )
   }
