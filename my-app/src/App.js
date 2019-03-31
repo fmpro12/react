@@ -46,8 +46,7 @@ class ModalSwitch extends React.Component {
         <Switch location={isModal ? this.previousLocation : location}>         
           <Route path="/" component={AllComponents} />       
         </Switch>
-        {isModal ? <Route exact path="/message/0" component={Modal} /> : null}     
-        {isModal ? <Route exact path="/message/1" component={Modal1} /> : null}    
+        {isModal ? <Route exact path="/message/0" component={Modal} /> : null}             
       </div>
     );
   }
@@ -75,15 +74,13 @@ const AllComponents = () => (
 
 
 const ITEMS = [
-  { id: 0, title: "Messages"},
-  { id: 1, title: "Notifications"}
+  { id: 0, title: "Messages"}
 ];
 
 
 function Header () {
   return (
     <div className="header1">
-    
     <div className="modal_message">  
     <Link to="/">
        <p className="links2">Home</p>
@@ -130,30 +127,6 @@ function Modal({ history }) {
   );
 }
 
-function Modal1({ history }) {
-  let back = e => {
-    e.stopPropagation();
-    history.goBack();
-  };
-
-  // let image = ITEMS[parseInt(match.params.id, 10)];
-
-  return (
-    <div
-      onClick={back}
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        bottom: 0,
-        right: 0,
-        background: "rgba(0, 0, 0, 0.15)"
-      }}
-    >    
-        <Notifications />
-      </div>   
-  );
-}
 
 
 
