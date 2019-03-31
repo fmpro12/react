@@ -20,10 +20,10 @@ class Notifications extends Component {
     this.setState({ isLoading: true });
 
     Axios.get('http://127.0.0.1:9090/api/tweets'
-    // ,{
-    //  headers: {
-    //   'Access-Control-Allow-Origin': '*',          
-    //  }}
+    ,{
+     headers: {
+      'Access-Control-Allow-Origin': '*',          
+     }}
     )   
     .then(result => this.setState({
         hits: result.data,

@@ -7,10 +7,11 @@ const server = express();
 const path = require('path');
 const messages = require("./messages/index")
 const tweets = require ('./tweets')
+const cors = require('cors')
 
 const distFolder = path.join(__dirname, '../my-app/build')
 
-
+server.use(cors())
 server.use(bodyParser.json());
 server.use("/api/users/", users);
 server.use("/api/posts/", posts);
