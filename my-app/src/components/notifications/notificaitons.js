@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 // import './notificaitons.scss'
-import Axios from 'axios';
+// import Axios from 'axios';
 import '../posts/post.scss'
 
 
 class Notifications extends Component {
   constructor(props) {
     super(props);
+  
 
     this.state = {
       hits: [],
@@ -16,21 +17,21 @@ class Notifications extends Component {
     };
   }
 
-  componentDidMount() {
-    this.setState({ isLoading: true });
+  // componentDidMount() {
+  //   this.setState({ isLoading: true });
 
-    Axios.get('http://127.0.0.1:9090/api/tweets'
-    ,{
-     headers: {
-      'Access-Control-Allow-Origin': '*',          
-     }}
-    )   
-    .then(result => this.setState({
-        hits: result.data,
-        isLoading: false       
-    }))
-    .catch(e => console.log(e));
-  }
+  //   Axios.get('http://127.0.0.1:9090/api/tweets'
+  //   ,{
+  //    headers: {
+  //     'Access-Control-Allow-Origin': '*',          
+  //    }}
+  //   )   
+  //   .then(result => this.setState({
+  //       hits: result.data,
+  //       isLoading: false       
+  //   }))
+  //   .catch(e => console.log(e));
+  // }
 
   
   render() {    
