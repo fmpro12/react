@@ -1,19 +1,19 @@
 const express = require('express');
 const router = express.Router();
 var Twitter = require('twitter');
-var params = {screen_name: 'adidas', tweet_mode: 'extended'};
 const dotenv = require('dotenv')
 const result = dotenv.config()
  
 
 
 router.get('/', (req, res) => {  
-  client.get('statuses/user_timeline', params, function(error, tweets, response) {    
+  const params = {screen_name: req.query.screen_name, tweet_mode: 'extended'};
+  client.get('statuses/user_timeline', params, function(error, tweets, response) {   
     if (!error) {          
-      res.send(tweets); 
+      res.json(tweets); 
     } 
     else {
-      res.status(500).json({ error: error });
+      res.status(500).json({ error: error });      
     }}
   )})
     

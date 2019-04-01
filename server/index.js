@@ -16,6 +16,7 @@ const distFolder = path.join(__dirname, '../my-app/build')
 const result = dotenv.config()
  
 
+
 server.use(cors())
 server.use(bodyParser.json());
 server.use("/api/users/", users);

@@ -1,52 +1,53 @@
 import axios from 'axios';
 import React, { Component } from 'react'
 // import Results from './results'
-const API_URL = 'http://127.0.0.1:9090/api/tweets'
+const API_URL = 'http://127.0.0.1:9090/api/tweets?screen_name'
 
 
 
 class Search extends Component {
-    constructor(props) {
-    super(props);
+  constructor(props) {
+    super(props)
+    this.state = {
+      value: '',
+      results: []
+    }
+    this.handleChange = this.handleChange.bind(this)
+  }
 
- this.state = {
-   query: '',
- }
-}
-getInfo = () => {
-    axios.get(`${API_URL}&screen_name=${this.state.query}`)
+// getInfo = () => {
+//     axios.get(`${API_URL}=${this.state.value}`)
+//       .then(({ data }) => {
+//         this.setState({
+//           results: data.data                    
+//         })
+//       })
+//   }
+
+
+  handleChange(event) {
+    this.setState({ value: event.target.value })
+    axios.get(`${API_URL}=${this.state.value}`)
       .then(({ data }) => {
         this.setState({
           results: data.data                    
         })
-        console.log(data)
       })
   }
 
-
-
-
-  handleInputChange = () => {
-    this.setState({
-      query: this.search.value
-    }, () => {
-      if (this.state.query && this.state.query.length > 1) {
-        if (this.state.query.length % 2 === 0) {
-          this.getInfo()
-        }
-      } 
-    })
-  }
+      
+  
 
   render() {
-    return (
-      <form>
+    return (     
+      <div>
         <input
-          placeholder="Search for..."
-          ref={input => this.search = input}
-          onChange={this.handleInputChange}
-          />       
-        </form>
+          type="text"
+          value={this.state.username}
+          onChange={this.handleChange}
+        />
+        <input type="submit" value="Submit" />     
+        </div>
     )
   }
 }
