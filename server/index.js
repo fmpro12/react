@@ -1,15 +1,20 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const users = require('./users/server.js');
-const posts = require('./posts/posts.js');
-const followers = require('./followers/index.js');
-const server = express();
-const path = require('path');
+const dotenv = require('dotenv')
+
+const express = require('express')
+const bodyParser = require('body-parser')
+const users = require('./users/server.js')
+const posts = require('./posts/posts.js')
+const followers = require('./followers/index.js')
+const server = express()
+const path = require('path')
 const messages = require("./messages/index")
 const tweets = require ('./tweets')
 const cors = require('cors')
 
 const distFolder = path.join(__dirname, '../my-app/build')
+
+const result = dotenv.config()
+ 
 
 server.use(cors())
 server.use(bodyParser.json());

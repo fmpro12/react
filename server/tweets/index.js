@@ -2,9 +2,12 @@ const express = require('express');
 const router = express.Router();
 var Twitter = require('twitter');
 var params = {screen_name: 'adidas', tweet_mode: 'extended'};
-const config = require('./config')
+const dotenv = require('dotenv')
+const result = dotenv.config()
+ 
 
-router.get('/', (req, res) => {
+
+router.get('/', (req, res) => {  
   client.get('statuses/user_timeline', params, function(error, tweets, response) {    
     if (!error) {          
       res.send(tweets); 
@@ -15,8 +18,15 @@ router.get('/', (req, res) => {
   )})
     
 
-var client = new Twitter(config)
-
+  const client = new Twitter({
+    consumer_key: process.env.TWITTER_CONSUMER_KEY,
+    consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+    access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+    access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET, 
+    request_options: {
+      proxy: process.env.PROXY
+    }
+  });
 
 
 
