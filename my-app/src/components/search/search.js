@@ -1,7 +1,11 @@
-import axios from 'axios';
 import React, { Component } from 'react'
-// import Results from './results'
+import { connect } from "react-redux";
+import './style.scss';
+import { fetchTweets } from '../redux_store/actions/gettweets'
+
 const API_URL = 'http://127.0.0.1:9090/api/tweets?screen_name'
+// import Notificaitons from '../notifications/notificaitons'
+
 
 
 
@@ -10,34 +14,33 @@ class Search extends Component {
     super(props)
     this.state = {
       value: '',
-      hits: []
+      hits: [],
+      isLoading: false
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    console.log('search',props);
   }
 
   handleChange(event) {
     this.setState({ value: event.target.value })
   }
 
-  handleSubmit(event) {
-    axios.get(`${API_URL}=${this.state.value}`)
-    .then(({ data }) => {
-      this.setState({
-        hits: data.data                    
-      })
-    })
-    .catch(e => console.log(e));
-
-    event.preventDefault();
-  }    
+  handleSubmit = event => {
+    const id = `${API_URL}=${this.state.value}`
+     event.preventDefault();
+     this.props.dispatch(fetchTweets(id));
+    }
+    
+ 
   
 
   render() {
-    return (
+    return (      
       <form onSubmit={this.handleSubmit}>
         <label>
-          Name:
+          Search:
           <input type="text" value={this.state.value} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />
@@ -45,5 +48,11 @@ class Search extends Component {
     );
   }
 }
+const mapStateToProps = state => ({
+  TweetsFetch: state.tweets.tweets,
+  loading: state.tweets.loading,
+  error: state.tweets.error
+});
 
-export default Search
+export default connect(mapStateToProps)(Search);
+

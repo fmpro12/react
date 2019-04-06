@@ -4,7 +4,6 @@ import Profile from './components/profile/profile';
 import Trend from './components/trends/trend';
 import Copyrights from './components/copyrights/copyrights';
 import Follows from './components/follow/follow';
-// import Header from './components/header/header';
 import './components/header/header.scss'
 import './index.scss';
 import Messages from './components/feeds/feed';
@@ -36,7 +35,7 @@ class ModalSwitch extends React.Component {
       location.state &&
       location.state.modal &&
       this.previousLocation !== location
-    ); // not initial render
+    ); 
 
 
 
@@ -51,25 +50,29 @@ class ModalSwitch extends React.Component {
   }
 }
 
-const Components = () => (
-  <header>
-<div className="flex_box">
-<Profile />
-<Trend />
-<Messages />
-<Follows />
-<Copyrights />
-
-</div>
-</header>
-)
-
-const AllComponents = () => (
-  <div>
-  <Header  />
-  <Components />
+const Components = () => {
+  return (
+    <header>
+  <div className="flex_box">
+  <Profile />
+  <Trend />
+  <Messages  />
+  <Follows />
+  <Copyrights />
   </div>
-)
+  </header>
+  )
+  
+}
+const AllComponents = () => { 
+    return (
+      <div>
+      <Header  />
+      <Components />
+      </div>
+    )
+  }
+
 
 
 const ITEMS = [
@@ -125,8 +128,6 @@ function Modal({ history }) {
       </div>   
   );
 }
-
-
 
 
 function ModalGallery() {

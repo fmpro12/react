@@ -1,43 +1,22 @@
 import React, { Component } from 'react';
 // import './notificaitons.scss'
 // import Axios from 'axios';
+import { connect } from "react-redux";
 import '../posts/post.scss'
 
 
 class Notifications extends Component {
   constructor(props) {
-    super(props);
-  
-
+    super(props); 
     this.state = {
-      hits: [],
-      images: [],
-      isLoading: false,
-      error: null,
-    };
+      hits: []     
+    }
   }
 
-  // componentDidMount() {
-  //   this.setState({ isLoading: true });
-
-  //   Axios.get('http://127.0.0.1:9090/api/tweets'
-  //   ,{
-  //    headers: {
-  //     'Access-Control-Allow-Origin': '*',          
-  //    }}
-  //   )   
-  //   .then(result => this.setState({
-  //       hits: result.data,
-  //       isLoading: false       
-  //   }))
-  //   .catch(e => console.log(e));
-  // }
-
   
-  render() {    
-    const { hits, isLoading} = this.state; 
- 
-    if (isLoading) {
+  render() { 
+    const { tweets, loading } = this.props
+    if (loading) {
       return (
         <div className='feed_main'>       
           <h2 className="js-ariaTitle">
@@ -46,13 +25,22 @@ class Notifications extends Component {
         </div>
       )
     }
+    if(tweets === undefined){
+      return (
+        <div className='feed_main'>       
+          <h2 className="js-ariaTitle">
+            Undefined...
+          </h2>
+        </div>
+      )
+    }
     else {
-      return hits.filter(item => item.entities.media !==undefined).map((item) =>        
+      return tweets.filter(item => item.entities.media !==undefined).map((item) =>        
         <div className='feed_main'>
           <strong className="fullname">{item.user.name}</strong>
           <article
-            key={item.id}
-          >{item.full_text}
+            key={item.id}>
+            {item.full_text}
           </article>
           <br />
           <img src={item.entities.media[0].media_url} alt="" className="images" />      
@@ -62,4 +50,11 @@ class Notifications extends Component {
   }
 }    
 
-export default Notifications;
+const mapStateToProps = state => ({
+  tweets: state.tweets.tweets,
+  loading: state.tweets.loading,
+  error: state.tweets.error
+});
+
+export default connect(mapStateToProps)(Notifications);
+
