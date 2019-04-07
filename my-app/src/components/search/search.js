@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 import './style.scss';
 import { fetchTweets } from '../redux_store/actions/gettweets'
-
 const API_URL = 'http://127.0.0.1:9090/api/tweets?screen_name'
-// import Notificaitons from '../notifications/notificaitons'
+
 
 
 
@@ -18,9 +17,7 @@ class Search extends Component {
       isLoading: false
     }
     this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this);
-
-    console.log('search',props);
+    this.handleSubmit = this.handleSubmit.bind(this);    
   }
 
   handleChange(event) {
@@ -51,7 +48,7 @@ class Search extends Component {
 const mapStateToProps = state => ({
   TweetsFetch: state.tweets.tweets,
   loading: state.tweets.loading,
-  error: state.tweets.error
+  error: state.tweets.error  
 });
 
 export default connect(mapStateToProps)(Search);
