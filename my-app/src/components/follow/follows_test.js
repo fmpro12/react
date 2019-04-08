@@ -1,61 +1,51 @@
 
 import React from "react";
-import { connect } from "react-redux";
-import { fetchProducts } from "../redux_store/actions/actionFetch";
-
-const id = "followers"
+import axios from 'axios';
 
 
 class ProductList extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      hits: [],
+      isLoading: false,
+      error: null,
+    };
+  }
   
   componentDidMount() {
-    this.props.dispatch(fetchProducts(id));
-  }
-fetchFunction () {
-    if (this.props.followersFetch === undefined){
-      return <div>Followers Undefined...</div>;
-    }
-    return this.props.followersFetch.map((unit) => {
-        return (
-            <div className="followers_flex">
-            <br />
-             <img src={unit.img} className="icons_followers" alt="" />
-                <article
-                 className="followers_redux"
-                 key={unit.id}>
-                {unit.name}
-                <br />
-                <button className="EdgeButton1">
-                <span className="follow_button">follow</span>
-                </button>
-                </article>
-            </div>
-        )
-    })
+    this.setState({ isLoading: true });
+    axios.get('http://127.0.0.1:9090/api/followers')
+    .then(result => this.setState({
+      hits: result.data,
+      isLoading: false
+    }))
+    .catch(error => this.setState({
+      error,
+      isLoading: false
+    }));
 }
-  render() {
-    const { error, loading} = this.props;
-    
-    if (error) {
-      return <div>Error! {error.message}</div>;
-    }
+  
 
-    if (loading) {
-      return <div>Loading...</div>;
-    }
 
-    return (
-        <div>
-{this.fetchFunction()}
-      </div>
-    );
-  }
-}
+render () {
+  const {hits} = this.state
+  return hits.map(unit =>
+    <div className="followers_flex">
+    <br />
+     <img src={unit.img} className="icons_followers" alt="" />
+        <article
+         className="followers_redux"
+         key={unit.id}>
+        {unit.name}
+        <br />
+        <button className="EdgeButton1">
+        <span className="follow_button">follow</span>
+        </button>
+        </article>
+    </div>
+  )}}
 
-const mapStateToProps = state => ({
-  followersFetch: state.fetched.items,
-  loading: state.fetched.loading,
-  error: state.fetched.error
-});
 
-export default connect(mapStateToProps)(ProductList);
+export default ProductList

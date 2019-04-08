@@ -5,9 +5,6 @@ import { fetchTweets } from '../redux_store/actions/gettweets'
 const API_URL = 'http://127.0.0.1:9090/api/tweets?screen_name'
 
 
-
-
-
 class Search extends Component {
   constructor(props) {
     super(props)
@@ -24,15 +21,13 @@ class Search extends Component {
     this.setState({ value: event.target.value })
   }
 
-  handleSubmit = event => {
+  handleSubmit(event) {
     const id = `${API_URL}=${this.state.value}`
      event.preventDefault();
      this.props.dispatch(fetchTweets(id));
     }
     
  
-  
-
   render() {
     return (      
       <form onSubmit={this.handleSubmit}>

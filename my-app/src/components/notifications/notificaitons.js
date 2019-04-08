@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import './notificaitons.scss'
-// import Axios from 'axios';
 import { connect } from "react-redux";
 import '../posts/post.scss'
 
