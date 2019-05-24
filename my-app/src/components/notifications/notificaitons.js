@@ -57,6 +57,14 @@ class Notifications extends Component {
         <img src={item.entities.media[0].media_url} alt="" className="images" />      
       </div>
     )
+    } else if (filtered.length === 0 ){
+      return (
+        <div className='feed_main'>       
+          <h2 className="js-ariaTitle">
+            Not found...
+          </h2>
+        </div>
+      )
     }
   }
 }    

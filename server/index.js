@@ -13,8 +13,6 @@ const cors = require('cors')
 
 const distFolder = path.join(__dirname, '../my-app/build')
 
-const result = dotenv.config()
- 
 
 
 server.use(cors())

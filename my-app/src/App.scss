@@ -1,9 +1,14 @@
 @import "index";
 
+
+@media only screen and (min-device-width: 480px){
+
+}
+
 .flex_box {
   display: flex;
   width: 100vw;
-  height: 10000px;    
+  height: 100vh;    
   flex-direction: column; 
   flex-wrap: wrap; 
 }
@@ -12,19 +17,19 @@
   flex-direction: column; 
   background-color:white;
   display: flex;
-  width: 290px;
-  height: 214px;    
+  width: 15vw;
+  height: 30vh;    
   margin-bottom: 13px;
-  margin-left: 12%;
-  margin-top: 63px;
+  margin-left: 12vw;
+  margin-top: 7vh;
   }
 .trend{
   display: flex;
   position: absolute;
-  width: 290px;
-  height: 475px;    
+  width: 15vw;
+  height: 45vh;    
   margin-bottom: 13px;
-  margin-top: 290px;
+  margin-top: 40vh;
   margin-left: 12%;
   background-color:white;
   }
@@ -33,11 +38,11 @@
   position: absolute; 
   background-color:white;
   flex-direction: column;
-  width: 590px;
-  height: 10000px;
+  width: 30vw;
+  height: 100vh;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 60px;
+  margin-top: 7vh;
   left: 0;
   right: 0;
 }
@@ -45,19 +50,19 @@
   display: flex;
   background-color: white;
   margin-bottom: 13px;
-  height: 388px;
-  width: 290px;
+  height: 42vh;
+  width: 15vw;
   left: 1300px;
   position: absolute;
-  margin-top: 60px;  
+  margin-top: 7vh;
 }
 .copyrights {
   display: flex;
   background-color:white;
-  width: 290px;
+  width: 15vw;
   height: 154px;
   left: 1300px;
-  top: 460px;
+  top: 50vh;
   position: absolute;
 }
 
