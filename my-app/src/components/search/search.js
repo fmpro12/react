@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 import './style.scss';
 import { fetchTweets } from '../redux_store/actions/gettweets'
-const API_URL = 'http://127.0.0.1:9090/api/tweets?screen_name'
+const API_URL = '/api/tweets?screen_name'
 
 
 class Search extends Component {

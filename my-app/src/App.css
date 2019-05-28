@@ -9,12 +9,26 @@ body.modal-open {
   overflow: hidden;
 }
 
+@media only screen and (min-device-width: 480px) {
+  .profile {
+    position: absolute;
+    flex-direction: column;
+    background-color: white;
+    display: flex;
+    width: 15vw;
+    height: 30vh;
+    right: 68vw;
+    margin-top: 7vh;
+  }
+}
+
 .flex_box {
   display: flex;
   width: 100vw;
   height: 100vh;
   flex-direction: column;
   flex-wrap: wrap;
+  position: absolute;
 }
 
 .profile {
@@ -24,8 +38,7 @@ body.modal-open {
   display: flex;
   width: 15vw;
   height: 30vh;
-  margin-bottom: 13px;
-  margin-left: 12vw;
+  right: 68vw;
   margin-top: 7vh;
 }
 
@@ -34,10 +47,30 @@ body.modal-open {
   position: absolute;
   width: 15vw;
   height: 45vh;
-  margin-bottom: 13px;
   margin-top: 40vh;
-  margin-left: 12%;
+  right: 68vw;
   background-color: white;
+}
+
+.follows {
+  display: flex;
+  background-color: white;
+  margin-bottom: 13px;
+  height: 42vh;
+  width: 15vw;
+  left: 68vw;
+  position: absolute;
+  margin-top: 7vh;
+}
+
+.copyrights {
+  display: flex;
+  background-color: white;
+  width: 15vw;
+  height: 154px;
+  left: 68vw;
+  top: 51vh;
+  position: absolute;
 }
 
 .feed {
@@ -52,25 +85,4 @@ body.modal-open {
   margin-top: 7vh;
   left: 0;
   right: 0;
-}
-
-.follows {
-  display: flex;
-  background-color: white;
-  margin-bottom: 13px;
-  height: 42vh;
-  width: 15vw;
-  left: 1300px;
-  position: absolute;
-  margin-top: 7vh;
-}
-
-.copyrights {
-  display: flex;
-  background-color: white;
-  width: 15vw;
-  height: 154px;
-  left: 1300px;
-  top: 50vh;
-  position: absolute;
 }
